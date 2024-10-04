@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://qvobvb5y11ew"]
+
+[ext_resource type="Texture2D" uid="uid://b3t6vimxcmkki" path="res://Assets/16x16 RPG Item Pack/Item__06.png" id="1_cdi86"]
+[ext_resource type="Script" path="res://Scripts/player/GUI/Inventory/item_data.gd" id="2_a86l0"]
+
+[resource]
+script = ExtResource("2_a86l0")
+type = 0
+item_name = "The Big One"
+item_damage = 10
+item_health = 0
+item_defense = 0
+stackable = false
+count = 0
+description = "The Big One"
+item_texture = ExtResource("1_cdi86")

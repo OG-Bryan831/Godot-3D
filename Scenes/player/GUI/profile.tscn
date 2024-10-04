@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://byn8u7j55bgc"]
+
+[ext_resource type="Script" path="res://Scripts/player/GUI/profile.gd" id="1_dnc4c"]
+
+[node name="profile" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 48.0
+offset_bottom = 96.0
+script = ExtResource("1_dnc4c")
+
+[node name="stats_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 40.0
+offset_right = 971.0
+offset_bottom = 259.0
+text = "text"
+horizontal_alignment = 1
+vertical_alignment = 1
