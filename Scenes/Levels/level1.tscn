@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxemgggsjtr"]
+[gd_scene load_steps=8 format=3 uid="uid://dxemgggsjtr"]
 
 [ext_resource type="MeshLibrary" uid="uid://bh0vpyob1p40i" path="res://Scenes/Levels/library.tres" id="1_l8ish"]
 [ext_resource type="PackedScene" uid="uid://hunwfywgg6g1" path="res://Scenes/player/player.tscn" id="2_thviy"]
 [ext_resource type="PackedScene" uid="uid://52cpwsfqxwu8" path="res://Scenes/Monsters/skeleton_warrior_monster.tscn" id="3_epnpn"]
 [ext_resource type="PackedScene" uid="uid://dp3iv5mqiyskw" path="res://Scenes/player/GUI/game_overlay_end.tscn" id="4_riq4y"]
 [ext_resource type="PackedScene" uid="uid://bi5ycfvbqwklo" path="res://Scenes/player/GUI.tscn" id="5_awfmj"]
+[ext_resource type="PackedScene" uid="uid://b1c7jw0g4b1x0" path="res://Scenes/item_object.tscn" id="7_mpq2b"]
 
 [sub_resource type="Environment" id="Environment_got8g"]
 background_mode = 1
@@ -27,10 +28,20 @@ environment = SubResource("Environment_got8g")
 [node name="player" parent="." instance=ExtResource("2_thviy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987038, 1.05, 1.84246)
 
-[node name="Skeleton_Warrior_Monster" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_epnpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10303, 1.05, -0.348014)
-player = NodePath("../player")
-
 [node name="gameover_overlay" parent="." instance=ExtResource("4_riq4y")]
 
 [node name="GUI" parent="." instance=ExtResource("5_awfmj")]
+
+[node name="Monsters" type="Node3D" parent="."]
+
+[node name="Skeleton_Warrior_Monster" parent="Monsters" node_paths=PackedStringArray("player") instance=ExtResource("3_epnpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10303, 1.05, -0.348014)
+player = NodePath("../../player")
+
+[node name="Projectiles" type="Node3D" parent="."]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="item_object" parent="Items" instance=ExtResource("7_mpq2b")]

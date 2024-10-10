@@ -118,12 +118,12 @@ func _on_damage_detector_body_entered(body: Node3D) -> void:
 		
 func damage_toplayer(damage: int):
 	if !just_hit:
-		just_hit=true
 		get_node("just_hit").start()
-		
-		Game.player_health-= damage
 		var damage_done= damage-Game.player_defense
 		
+		if damage_done > 0:
+			Game.damage_player(damage_done)
+			just_hit=true
 		if Game.player_health < 0:
 			is_dying=1
 			playback.travel(death_node_name)

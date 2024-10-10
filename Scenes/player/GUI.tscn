@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi5ycfvbqwklo"]
+[gd_scene load_steps=6 format=3 uid="uid://bi5ycfvbqwklo"]
 
 [ext_resource type="Theme" uid="uid://ei3ti5wvx710" path="res://Assets/default2.0.tres" id="1_hbsdh"]
 [ext_resource type="Script" path="res://Scripts/player/GUI/gui.gd" id="1_tdwgu"]
+[ext_resource type="Texture2D" uid="uid://cjid80mokonss" path="res://Assets/ui_big_pieces.png" id="2_0opvc"]
 [ext_resource type="PackedScene" uid="uid://dr4bmj4n4ldf" path="res://Scenes/player/GUI/inventory/inventory.tscn" id="3_yx8g4"]
 [ext_resource type="PackedScene" uid="uid://byn8u7j55bgc" path="res://Scenes/player/GUI/profile.tscn" id="4_1f3sn"]
 
@@ -9,12 +10,19 @@
 process_mode = 3
 script = ExtResource("1_tdwgu")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(143.5, 30.3125)
+scale = Vector2(2.90278, 2.125)
+texture = ExtResource("2_0opvc")
+region_enabled = true
+region_rect = Rect2(260, 39, 72, 21)
+
 [node name="hp_bar" type="ProgressBar" parent="."]
 offset_left = 64.0
 offset_top = 16.0
-offset_right = 232.0
+offset_right = 224.0
 offset_bottom = 48.0
-value = 50.0
+value = 100.0
 show_percentage = false
 
 [node name="container" type="Control" parent="."]
